@@ -1,0 +1,12 @@
+{
+  "python.pythonPath": "C:\\Users\\Home\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
+  "files.associations": {
+    "iostream": "cpp"
+  },
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
+  }
+}
