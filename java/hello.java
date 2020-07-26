@@ -1,25 +1,25 @@
-
-import java.io.*; 
-import java.util.Scanner;
-import javax.xml.crypto.KeySelector.Purpose;
-
-public class hello {
-  public static void main(String[] args){
-  int n=7;
-  for(int i=1;i<=n;i++){
-    for(int j=1;j<=n;j++)
-    {
-      if(i+j==n+1){
-        System.out.print("*\t");
-      }
-      else{
-        System.out.print("\t");
-      }
-    }
-    System.out.println( );
+import java.util.*;
+  
+  public class hello{
+  
+  public static void main(String[] args) {
+      Scanner scn = new Scanner(System.in);
+      int n = scn.nextInt();
+      int b = scn.nextInt();
+      int c=scn.nextInt();
+      int dn = getValueInBase(n, b,c);
+      System.out.println(dn);
+   }
+ 
+   public static int getValueInBase(int n, int b,int c){
+       int ans=0;
+       int i=1;
+       while(n!=0){
+         int r=n%c;
+         n=n/c;
+         ans=ans+r*i;
+         i=i*b;
+       }
+       return ans;
+   }
   }
-  
-  
-  
-  
-  }}
