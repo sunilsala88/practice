@@ -1,25 +1,39 @@
 import java.util.*;
+
   
   public class hello{
   
   public static void main(String[] args) {
       Scanner scn = new Scanner(System.in);
-      int n = scn.nextInt();
+      int a = scn.nextInt();
       int b = scn.nextInt();
-      int c=scn.nextInt();
-      int dn = getValueInBase(n, b,c);
+      int base=scn.nextInt();
+
+      int dn = getValue(a, b,base);
       System.out.println(dn);
    }
- 
-   public static int getValueInBase(int n, int b,int c){
-       int ans=0;
-       int i=1;
-       while(n!=0){
-         int r=n%c;
-         n=n/c;
-         ans=ans+r*i;
-         i=i*b;
-       }
-       return ans;
+   public static int  getValue(int a,int b,int base) {
+     int carry=0;
+     int ans=0;
+     int i=1;
+     while(a!=0 || b!=0){
+      int a1=a%base;
+      int b1=b%base;
+      a=a/base;
+      b=b/base;
+      int temp=a1+b1+carry;
+      if(temp>=base){
+        ans=(temp-base-1)*i;
+        carry+=1;
+      }
+      else{
+        carry=0;
+      }
+      i=i*base;
+     }
+     
+     return ans;
+
+     
    }
   }
