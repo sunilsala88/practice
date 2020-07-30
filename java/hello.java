@@ -1,39 +1,31 @@
 import java.util.*;
-
-  
   public class hello{
   
   public static void main(String[] args) {
       Scanner scn = new Scanner(System.in);
-      int a = scn.nextInt();
       int b = scn.nextInt();
-      int base=scn.nextInt();
+      int n1 = scn.nextInt();
+      int n2=scn.nextInt();
 
-      int dn = getValue(a, b,base);
+      int dn = getsum(b,n1,n2);
       System.out.println(dn);
    }
-   public static int  getValue(int a,int b,int base) {
-     int carry=0;
-     int ans=0;
-     int i=1;
-     while(a!=0 || b!=0){
-      int a1=a%base;
-      int b1=b%base;
-      a=a/base;
-      b=b/base;
-      int temp=a1+b1+carry;
-      if(temp>=base){
-        ans=(temp-base-1)*i;
-        carry+=1;
-      }
-      else{
-        carry=0;
-      }
-      i=i*base;
+   public static int getsum(int b,int n1,int n2) {
+     int rv=0;
+     int c=0;
+     int p=1;
+     while(n1>0 || n2>0 || c>0){
+       int d1=n1%10;
+       int d2=n2%10;
+       n1=n1/10;
+       n2=n2/10;
+       int d=d1+d2+c;
+       c=d/8;
+       d=d%8;
+       rv+=d*p;
+       p=p*10;
      }
-     
-     return ans;
-
-     
+     return rv;
    }
+   
   }
