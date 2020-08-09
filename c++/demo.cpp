@@ -18,20 +18,7 @@ int main()
         for (int j = 0; j < vect[i].size(); j++) 
             cout << vect[i][j] << " "; 
         cout << endl; 
-    } 
-    cout<<endl;
-    int count=0;
-    int i;
-  for(int i=0;i<n;i++){
-    if(vect[i][0]==0 && vect[i][i]==0){
-      for(int j=0;j<n;j++){
-        if(vect[i][j]==0 && vect[j][i]==1 ){
-          count++;
-        }
-      }
-      if(count==n-1)cout<<i;
-      
-    }
+
   }
  
     return 0; 
