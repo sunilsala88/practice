@@ -1,3 +1,3 @@
 # practice
-programming problems
+programming problem
 
